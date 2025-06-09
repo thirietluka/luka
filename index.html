@@ -52,6 +52,11 @@
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
+	<script type="module">
+		import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+		mermaid.initialize({ startOnLoad: true });
+	</script>
+
 
 	<!-- favicons
 	================================================== -->
@@ -208,7 +213,7 @@
 					</iframe>
 				</div>
 
-				<p>Un ordinateur est composé principalement de :
+				<p>Un ordinateur (matériel) est composé principalement de :
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">Une carte mère (MotherBoard)</li>
 					<li class="list-group-item">Un processeur (CPU)</li>
@@ -221,6 +226,28 @@
 					</li>
 				</ul>
 				</p>
+
+				Les deux systèmes d'exploitations (OS: Operating System) les plus utilisés en entreprise sont Linux et
+				Windows Server.
+				Le système d'exploitation est une couche logicielle qui fait l'interface entre les applications et le
+				matériel
+				Le système d'exploitation est composé d'un noyau (kernel), de pilotes (drivers), d'outils système, de
+				bibliothèques, de services.
+				Lorsque j'allume l'ordinateur:
+				Le BIOS s'allume en premier (il prépare le matériel: CPU, RAM, SSD GPU, ...)
+				Puis le BIOS lance le bootloader qui va charger le système d'exploitation.
+
+				<pre class="mermaid">
+                    graph TD
+                    A[Démarrage de l'ordinateur] --> B[BIOS/UEFI<br>Réveille le matériel]
+                    B --> C["Bootloader<br>(GRUB ou Windows Boot Manager)"]
+                    C --> D["Noyau (Kernel)<br>Contrôle total du système"]
+                    D --> E[Drivers<br>Font le lien avec le matériel]
+                    D --> F[Outils système<br>Gèrent les fichiers, utilisateurs...]
+                    D --> G["Interface (ex: bureau ou terminal)<br>Pour l'utilisateur"]
+                    E --> H["Périphériques<br>(clavier, écran, imprimante, etc.)"]
+                    G --> I[Utilisateur<br>Utilise le système]
+                </pre>
 
 			</div>
 
