@@ -46,6 +46,9 @@
 		#contact {
 			scroll-margin-top: 70px;
 		}
+
+		.mermaid {
+			background-color: white;
 	</style>
 
 	<!-- script
@@ -54,13 +57,7 @@
 	<script src="js/pace.min.js"></script>
 	<script type="module">
 		import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-		mermaid.initialize({
-			startOnLoad: true,
-			theme: 'base',
-			themeVariables: {
-				background: '#ffffff'
-			}
-		});
+		mermaid.initialize({ startOnLoad: true, theme: 'base' });
 	</script>
 
 
@@ -280,7 +277,41 @@
 					<li class="list-group-item">Introduction aux commandes Linux</li>
 				</ul>
 
+				<div class="table-responsive">
 
+					<table>
+						<thead>
+							<tr>
+								<th>Commande</th>
+								<th>Syntaxe</th>
+								<th>Description</th>
+								<th>Exemple</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>pwd</td>
+								<td>Print Working Directory</td>
+								<td>Affiche le chemin absolu du répertoire dans lequel on se trouve</td>
+								<td>pwd</td>
+							</tr>
+							<tr>
+								<td>cd</td>
+								<td>Change Directory</td>
+								<td>Navigue entre les répertoires</td>
+								<td>
+									<pre>
+                                      cd /home/luka
+                                      cd ..
+                                      cd ~
+                                      cd -
+                                    </pre>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
 
 			</div>
 
