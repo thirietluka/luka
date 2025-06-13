@@ -263,14 +263,14 @@
 
 				<pre class="mermaid">
                     graph TD
-                    A[Démarrage de l'ordinateur] --> B[BIOS/UEFI<br>Réveille le matériel]
+                    A["Démarrage de l'ordinateur"] --> B["BIOS/UEFI<br>Réveille le matériel"]
                     B --> C["Bootloader<br>(GRUB ou Windows Boot Manager)"]
                     C --> D["Noyau (Kernel)<br>Contrôle total du système"]
-                    D --> E[Drivers<br>Font le lien avec le matériel]
-                    D --> F[Outils système<br>Gèrent les fichiers, utilisateurs...]
+                    D --> E["Drivers<br>Font le lien avec le matériel"]
+                    D --> F["Outils système<br>Gèrent les fichiers, utilisateurs..."]
                     D --> G["Interface (ex: bureau ou terminal)<br>Pour l'utilisateur"]
                     E --> H["Périphériques<br>(clavier, écran, imprimante, etc.)"]
-                    G --> I[Utilisateur<br>Utilise le système]
+                    G --> I["Utilisateur<br>Utilise le système"]
                 </pre>
 
 				<ul class="list-group list-group-flush">
@@ -308,11 +308,54 @@
 								<td>ls /home/luka, ls -l, ls -a</td>
 							</tr>
 							<tr>
-								<td>ls</td>
-								<td>List</td>
-								<td>liste le contenu d'un répertoire</td>
-								<td>ls /home/luka, ls -l, ls -a</td>
+								<td>mkdir</td>
+								<td>make directory</td>
+								<td>crées de nouveaux répertoires</td>
+								<td>mkdir luka</td>
 							</tr>
+							<tr>
+								<td>rmdir</td>
+								<td>remove directory</td>
+								<td>supprime des répertoires vides</td>
+								<td>rmdir luka</td>
+							</tr>
+							<tr>
+								<td>touch</td>
+								<td></td>
+								<td>crées un nouveau fichier vide</td>
+								<td>touch luka.txt</td>
+							</tr>
+							<tr>
+								<td>cat</td>
+								<td>concatenate</td>
+								<td>affiche le contenu d'un fichier</td>
+								<td>cat luka.txt</td>
+							</tr>
+							<tr>
+								<td>less</td>
+								<td></td>
+								<td>parcour le contenu du fichier page par page</td>
+								<td>less luka.txt</td>
+							</tr>
+							<tr>
+								<td>cp</td>
+								<td>copy</td>
+								<td>copie des fichiers et des répertoires</td>
+								<td>cp luka.txt raphael.txt, cp raphael.txt /home/luka/</td>
+							</tr>
+							<tr>
+								<td>mv</td>
+								<td>move</td>
+								<td>déplace ou renomme des fichiers et des répertoires</td>
+								<td>mv luka.txt raphael.txt</td>
+							</tr>
+							<tr>
+								<td>rm</td>
+								<td>remove</td>
+								<td>supprime des fichiers et des répertoires</td>
+								<td>rm luka</td>
+							</tr>
+							
 						</tbody>
 					</table>
 
