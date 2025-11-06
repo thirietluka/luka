@@ -463,7 +463,21 @@
 				<h3 id="stage">Mon stage</h3>
 
 				<p class="drop-cap">
-					A remplir
+			     Lire des informations système (CPU, RAM, disque) sous Linux.
+                    fonction set_ram
+                       Utilisation de /proc/meminfo pour lire la mémoire RAM totale et disponible
+                       Calcul du % de RAM utilisé
+                    fonction set_cpu
+                       Utilisation de /proc/cpuinfo pour récupérer le nombre de coeurs
+                       Utilisation de la fonction getloadavg pour récupérer la charge moyenne
+                       Calcul du % de CPU utilisé
+                    fonction set_disk
+                       Utilisation de la fonction statvfs pour récupérer les stats du disque
+                       Calcul du % de DISK utilisé
+                 Stocker ces mesures dans une base PostgreSQL.
+                		Utilisation de la bibliothèque PostgreSQL Libpq
+                    Création d’une fonction d’insertion des métriques dans PostgreSQL
+
 				</p>
 
 			</div>
