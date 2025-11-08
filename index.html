@@ -148,7 +148,7 @@
 
 			<div class="col-twelve">
 
-				<h3 id="formation">Ma préparation à la formation TSSR</h3>
+				<h1 id="formation">Ma préparation à la formation TSSR</h1>
 
 				<p class="drop-cap">Actuellement accompagné par la Mission Locale dans mon projet professionnel, je
 					souhaite intégrer dans un futur proche la formation de Technicien Supérieur Systèmes et Réseaux.
@@ -175,7 +175,7 @@
 
 			<div class="col-twelve">
 
-				<h3 id="pformation">Pourquoi cette formation</h3>
+				<h1 id="pformation">Pourquoi cette formation</h1>
 
 				<div class="mb-4">
 					<p class="lead">
@@ -204,7 +204,7 @@
 
 			<div class="col-twelve">
 
-				<h3 id="programme">Mon programme d'apprentissage</h3>
+				<h1 id="programme">Mon programme d'apprentissage</h1>
 
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">Comprendre le fonctionnement d'un ordinateur et d'un réseau local</li>
@@ -377,7 +377,8 @@
 							<tr>
 								<td>chown</td>
 								<td>change owner</td>
-								<td>modifie le propriétaire et/ou le groupe propriétaire d'un fichier ou répertoire.</td>
+								<td>modifie le propriétaire et/ou le groupe propriétaire d'un fichier ou répertoire.
+								</td>
 								<td>chown luka fichier.txt, chown luka:devs luka.txt</td>
 							</tr>
 							<tr>
@@ -425,7 +426,8 @@
 							<tr>
 								<td>sudo</td>
 								<td>superuser do</td>
-								<td>exécute une commande avec les privilèges d'un autre utilisateur, généralement root</td>
+								<td>exécute une commande avec les privilèges d'un autre utilisateur, généralement root
+								</td>
 								<td>sudo groupdel marketing</td>
 							</tr>
 						</tbody>
@@ -444,7 +446,7 @@
 
 			<div class="col-twelve">
 
-				<h3 id="encadrement">Encadrement et soutien</h3>
+				<h1 id="encadrement">Encadrement et soutien</h1>
 
 				<p class="drop-cap">Je suis encadré dans mon parcours par mon père, architecte SSI (Sécurité des
 					Systèmes d'Information), qui m'aide à structurer mon apprentissage, à comprendre les enjeux
@@ -456,96 +458,65 @@
 
 		</div>
 
-        <div class="row">
+		<div class="row">
 
 			<div class="col-twelve">
 
-				<h3 id="stage">Mon stage</h3>
-
-				<p class="drop-cap">Stage Sentinel ArchiConsulting (1 mois)
-                Le projet s’appelle « Météo perso ». Il consiste à créer une
-				application qui surveille les ressources de l’ordinateur (processeur, mémoire, disque),
-				stocke les résultats dans une base de données PostgreSQL, puis affiche ces informations 
-				sur une page web dynamique hébergée par un serveur web.
-				L’application web utilise une API REST sécurisée en TLS et présente les résultats sous forme de graphiques
-
+				<h1 id="stage">Mon stage</h1>
+				<p>Stage Sentinel ArchiConsulting (1 mois)</p>
+				<p class="drop-cap">
+					Le projet s’appelle « Météo perso ». Il consiste à créer une application qui surveille les
+					ressources de
+					l’ordinateur (processeur, mémoire, disque), stocke les résultats dans une base de données
+					PostgreSQL, puis
+					affiche ces informations sur une page web dynamique hébergée par un serveur web. L’application web
+					utilise
+					une API REST sécurisée en TLS et présente les résultats sous forme de graphiques.
 				</p>
 
-				<style>
-				  section {
-					margin-bottom: 20px;
-					font-family: Arial, sans-serif;
-				  }
+				<h2>Semaine 1</h2>
+				<h3>Objectifs</h3>
+				<ul>
+					<li>Lire des informations système (CPU, RAM, disque) sous Linux.</li>
+					<ul>
+						<li>fonction set_ram</li>
+						<ul>
+							<li>Utilisation de /proc/meminfo pour lire la mémoire RAM totale et disponible</li>
+							<li>Calcul du % de RAM utilisé</li>
+						</ul>
 
-				  h2 {
-				    color: #2a4d8f;
-					margin-bottom: 10px;
-				  }
-
-				  h3 {
-				    color: #444;
-					margin-bottom: 8px;
-				  }
-
-				  ul {
-					list-style: disc;
-					margin-left: 20px;
-				  }
-
-				  ul ul {
-					list-style-type: circle;
-					margin-top: 6px;
-					margin-bottom: 6px;
-				  }
-				  
-				  li {
-					margin-bottom: 6px;
-				  }
-				  </style>
-
-				  <section>
-					<h2>Semaine 1</h2>
-					<h3>Objectifs</h3>
-				  <ul>
-				    <li> Lire des informations système (CPU, RAM, disque) sous Linux.
-					  <ul>
-                        <li> fonction set_ram
-						  <ul>
-                            <li> Utilisation de /proc/meminfo pour lire la mémoire RAM totale et disponible</li>
-                            <li> Calcul du % de RAM utilisé</li>
-						  </ul>
+						<li>fonction set_cpu</li>
+						<ul>
+							<li>Utilisation de /proc/cpuinfo pour récupérer le nombre de coeurs</li>
+							<li>Utilisation de la fonction getloadavg pour récupérer la charge moyenne</li>
+							<li>Calcul du % de CPU utilisé</li>
+						</ul>
 						</li>
-                        <li> fonction set_cpu
-						  <ul>
-                            <li> Utilisation de /proc/cpuinfo pour récupérer le nombre de coeurs</li>
-                            <li> Utilisation de la fonction getloadavg pour récupérer la charge moyenne</li>
-                            <li> Calcul du % de CPU utilisé</li>
-						  </ul>
+						<li>fonction set_disk
+							<ul>
+								<li>Utilisation de la fonction statvfs pour récupérer les stats du disque</li>
+								<li>Calcul du % de DISK utilisé</li>
+							</ul>
 						</li>
-                        <li> fonction set_disk
-						  <ul>
-                            <li> Utilisation de la fonction statvfs pour récupérer les stats du disque</li>
-                            <li> Calcul du % de DISK utilisé</li>
-						  </ul>
-						</li>
-				      </ul>
-				    </li>
-                    <li> Stocker ces mesures dans une base PostgreSQL.
-					  <ul>
-                	    <li> Utilisation de la bibliothèque PostgreSQL Libpq</li>
-                        <li> Création d’une fonction d’insertion des métriques dans PostgreSQL</li>
-				      </ul>
-				    </li>
-			      </ul> 
+					</ul>
+					</li>
+					<li>Stocker ces mesures dans une base PostgreSQL</li>
+					<ul>
+						<li>Utilisation de la bibliothèque PostgreSQL Libpq</li>
+						<li>Création d’une fonction d’insertion des métriques dans PostgreSQL</li>
+					</ul>
+					</li>
+				</ul>
 
-				  <h3>Outils</h3>
-				  <ul>
+				<h3>Outils</h3>
+				<ul>
 					<li>Langage C pour la collecte des métriques.</li>
 					<li>PostgreSQL pour le stockage des données.</li>
-					<li>Systèmes d'exploitation : Almalinux pour l'application en C et Rocky pour la base de donées PostgreSQL</li>
-				  </ul>
-				</section>
-				
+					<li>Systèmes d'exploitation : Almalinux pour l'application en C et Rocky pour la base de donées
+						PostgreSQL</li>
+				</ul>
+
+
 
 			</div>
 
