@@ -478,22 +478,22 @@
 				<h2>Semaine 1</h2>
 				<b>Objectifs</b>
 				<ul>
-					<li>Lire des informations système (CPU, RAM, disque) sous Linux.</li>
+					<li>Lire des informations système (CPU, RAM, disque) sous Linux</li>
 					<ul>
-						<li>fonction set_ram</li>
+						<li>Fonction set_ram</li>
 						<ul>
 							<li>Utilisation de /proc/meminfo pour lire la mémoire RAM totale et disponible</li>
 							<li>Calcul du % de RAM utilisé</li>
 						</ul>
 
-						<li>fonction set_cpu</li>
+						<li>Fonction set_cpu</li>
 						<ul>
 							<li>Utilisation de /proc/cpuinfo pour récupérer le nombre de coeurs</li>
 							<li>Utilisation de la fonction getloadavg pour récupérer la charge moyenne</li>
 							<li>Calcul du % de CPU utilisé</li>
 						</ul>
 						</li>
-						<li>fonction set_disk
+						<li>Fonction set_disk
 							<ul>
 								<li>Utilisation de la fonction statvfs pour récupérer les stats du disque</li>
 								<li>Calcul du % de DISK utilisé</li>
@@ -511,8 +511,8 @@
 
 				<b>Outils</b>
 				<ul>
-					<li>Langage C pour la collecte des métriques.</li>
-					<li>PostgreSQL pour le stockage des données.</li>
+					<li>Langage C pour la collecte des métriques</li>
+					<li>PostgreSQL pour le stockage des données</li>
 					<li>Systèmes d'exploitation : Almalinux pour l'application en C et Rocky pour la base de donées
 						PostgreSQL</li>
 				</ul>
@@ -529,10 +529,10 @@
 					
 						<li>Fonction get_data</li>
 							<ul>
-								<li>Ouvrir une connexion à la base PostgreSQL (get_db_connection)</li>
+								<li>Ouvre une connexion à la base PostgreSQL (get_db_connection)</li>
 								<li>Exécute une requête SQL pour récupérer les données (CPU, RAM, DISK, created_at)</li>
 								<li>récupère tous les résultats dans une liste de tuples</li>
-								<li>transforme les tuples en dictionnaires pour avoir des clés lisibles</li>
+								<li>Transforme les tuples en dictionnaires pour avoir des clés lisibles</li>
 								<li>Convertit le tout en JSON</li>
 							</ul>
 			    </ul>
