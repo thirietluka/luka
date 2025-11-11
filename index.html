@@ -520,43 +520,30 @@
 				<h2>Semaine 2</h2>
 				<b>Objectifs</b>
 				<ul>
-					<li>Lire des informations système (CPU, RAM, disque) sous Linux.</li>
-					<ul>
-						<li>fonction set_ram</li>
+					<li>Exposer les données via une API REST Flask sous http://<mon_serveur_flask>:5000/data</li>
 						<ul>
-							<li>Utilisation de /proc/meminfo pour lire la mémoire RAM totale et disponible</li>
-							<li>Calcul du % de RAM utilisé</li>
+							<li>Import de Flask, jsonify et psicopg2</li>
+							<li>Création d'une fonction pour obtenir la connexion à PostgreSQL (get_connection)</li>
+							<li>Création d'une route /data</li>
 						</ul>
-
-						<li>fonction set_cpu</li>
-						<ul>
-							<li>Utilisation de /proc/cpuinfo pour récupérer le nombre de coeurs</li>
-							<li>Utilisation de la fonction getloadavg pour récupérer la charge moyenne</li>
-							<li>Calcul du % de CPU utilisé</li>
-						</ul>
-						</li>
-						<li>fonction set_disk
+					
+						<li>Fonction get_data</li>
 							<ul>
-								<li>Utilisation de la fonction statvfs pour récupérer les stats du disque</li>
-								<li>Calcul du % de DISK utilisé</li>
+								<li>Ouvrir une connexion à la base PostgreSQL (get_db_connection)</li>
+								<li>Exécute une requête SQL pour récupérer les données (CPU, RAM, DISK, created_at)</li>
+								<li>récupère tous les résultats dans une liste de tuples</li>
+								<li>transforme les tuples en dictionnaires pour avoir des clés lisibles</li>
+								<li>Convertit le tout en JSON</li>
 							</ul>
-						</li>
-					</ul>
-					</li>
-					<li>Stocker ces mesures dans une base PostgreSQL</li>
-					<ul>
-						<li>Utilisation de la bibliothèque PostgreSQL Libpq</li>
-						<li>Création d’une fonction d’insertion des métriques dans PostgreSQL</li>
-					</ul>
-					</li>
-				</ul>
+			    </ul>
 
 				<b>Outils</b>
 				<ul>
-					<li>Langage C pour la collecte des métriques.</li>
-					<li>PostgreSQL pour le stockage des données.</li>
-					<li>Systèmes d'exploitation : Almalinux pour l'application en C et Rocky pour la base de donées
-						PostgreSQL</li>
+					<li>Langage Phyton</li>
+					<li>Psycopg2 pour que PostgreSQL soit accessible depuis Python</li>
+					<li>Flask pour le serveur web en python</li>
+					<li>jsonify pour la conversion des tuple en JSON</li>
+					<li>Système d’exploitation : Debian pour l'application en Python et Rocky pour la base de données PostgreSQL</li>
 				</ul>
 
 				<h2>Semaine 3</h2>
