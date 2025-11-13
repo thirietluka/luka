@@ -549,43 +549,66 @@
 				<h2>Semaine 3</h2>
 				<b>Objectifs</b>
 				<ul>
-					<li>Lire des informations système (CPU, RAM, disque) sous Linux.</li>
+					<li>Afficher les résultats sur une page web avec Chart.js</li>
 					<ul>
-						<li>fonction set_ram</li>
+						<li>Fichier chart.js</li>
 						<ul>
-							<li>Utilisation de /proc/meminfo pour lire la mémoire RAM totale et disponible</li>
-							<li>Calcul du % de RAM utilisé</li>
+							<li>Création de trois graphique linéaires avec le Constructeur new Chart </li>
 						</ul>
 
-						<li>fonction set_cpu</li>
+						<li>Fonction refreshData</li>
 						<ul>
-							<li>Utilisation de /proc/cpuinfo pour récupérer le nombre de coeurs</li>
-							<li>Utilisation de la fonction getloadavg pour récupérer la charge moyenne</li>
-							<li>Calcul du % de CPU utilisé</li>
+							<li> Utilise fetch("/data") pour récupérer les données JSON du serveur Flask</li>
+							<li>Convertit la réponse en objet JavaScript</li>
+							<li>Inverse les données pour les mettre dans le bon ordre (du plus ancien au plus récent)</li>
 						</ul>
-						</li>
-						<li>fonction set_disk
+
+						<li>Fonction map</li>
 							<ul>
-								<li>Utilisation de la fonction statvfs pour récupérer les stats du disque</li>
-								<li>Calcul du % de DISK utilisé</li>
+								<li>Récupère dans ces données les heures et les valeurs du CPU, de la RAM et du DISK</li>
+								<li>Met à jour les graphiques avec <NotreGraphique>.data et redessine avec <NotreGraphique>.update </li>
+								<li>Relance la fonction toutes les 2 secondes avec setInterval(refreshData, 2000) pour actualiser les graphiques</li>	
 							</ul>
 						</li>
 					</ul>
-					</li>
-					<li>Stocker ces mesures dans une base PostgreSQL</li>
+					
+					<li>Fichier styles.css</li>
 					<ul>
-						<li>Utilisation de la bibliothèque PostgreSQL Libpq</li>
-						<li>Création d’une fonction d’insertion des métriques dans PostgreSQL</li>
+						<li>Centre et empile verticalement chaque graphique dans des conteneurs .chart-box </li>
+						<li>Définit une taille fixe pour chaque graphique</li>
 					</ul>
-					</li>
+
+					<li>Fichier index.html</li>
+					<ul>
+						<li>Importe Chart.js</li>
+						<li>Importe le fichier styles.css pour le style</li>
+						<li>Crée trois zones <canvas> pour dessiner les graphiques (CPU, RAM, DISK)</li>
+						<li>Importe le fichier charts.js qui crée et met à jour les graphiques en temps réel</li>
+					</ul>
+
+					<li>Fichier app.py</li>
+					<ul>
+						<li>import de render_template</li>
+						<li>Création d'une route /</li>
+					</ul>
+					<li>Fonction index</li>
+					<ul>
+						<li>retourne le fichier index.html avec render_template("index.html")</li>
+						<li></li>
+					</ul>
+
+
+
 				</ul>
 
 				<b>Outils</b>
 				<ul>
-					<li>Langage C pour la collecte des métriques.</li>
-					<li>PostgreSQL pour le stockage des données.</li>
-					<li>Systèmes d'exploitation : Almalinux pour l'application en C et Rocky pour la base de donées
-						PostgreSQL</li>
+					<li>Langage Python</li>
+					<li>render_template pour la recherche d'un fichier</li>
+					<li>Flask pour le serveur web en python</li>
+					<li>Chart.js pour la création des graphiques</li>
+					<li>CSS pour le style de la page</li>
+					<li>Système d’exploitation : Debian pour l'application en Python, html et JavaScript</li>
 				</ul>
 
 				<h2>Semaine 4</h2>
