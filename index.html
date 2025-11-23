@@ -660,7 +660,7 @@
 						<img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="22" alt="GitHub icon">
 						Voir le code app.py
 					</a>
-					
+
 				</p>
 				
 
@@ -669,41 +669,50 @@
 				<ul>
 					<li>Lire des informations système (CPU, RAM, disque) sous Linux.</li>
 					<ul>
-						<li>fonction set_ram</li>
+						<li>PostgreSQL</li>
 						<ul>
-							<li>Utilisation de /proc/meminfo pour lire la mémoire RAM totale et disponible</li>
-							<li>Calcul du % de RAM utilisé</li>
+							<li>Création d'une table users dans PostgreSQL</li>
+							<ul>
+								<li>Insertion d'une colonne login et une password</li>
+								<li>Isertion du mot de passe(hash bcrypt) dans la colonne password</li>
+							</ul>
 						</ul>
 
-						<li>fonction set_cpu</li>
+						<li>Flask</li>
 						<ul>
-							<li>Utilisation de /proc/cpuinfo pour récupérer le nombre de coeurs</li>
-							<li>Utilisation de la fonction getloadavg pour récupérer la charge moyenne</li>
-							<li>Calcul du % de CPU utilisé</li>
+							<li>Création d'une page /login avec un petit formulaire HTML(login.html)</li>
+							<ul>
+								<li>Vérification du couple login/mot de passe côté Flask avec bcrypt</li>
+							</ul>
+							<li>Utilisation de la session Flask pour 'retenir' que l'utilisateur est connecté</li>
+							<li>Redirection vers /graphics si l'authentification est réussi</li>
+							<li>Interdiction de l'accès à /graphics si la personne n'est pas connectée</li>
+							<li>Interdiction de l'accès à /data si la personne n'est pas connectée</li>
 						</ul>
 						</li>
-						<li>fonction set_disk
+						<li>Linux</li>
 							<ul>
-								<li>Utilisation de la fonction statvfs pour récupérer les stats du disque</li>
-								<li>Calcul du % de DISK utilisé</li>
+								<li>Création d'un certificat racine qui sert à signer d'autres certificats (CA)</li>
+								<li>Création d'une clé privée pour le serveur Flask</li>
+								<li>Création d'une requête de signature (CSR) pour le serveur Flask</li>
+								<li>Création d'un fichier v3.ext pour le SAN (Subject Alternate Name)</li>
+								<li>Signature du certificat serveur avec le certificat racine</li>
 							</ul>
 						</li>
 					</ul>
 					</li>
-					<li>Stocker ces mesures dans une base PostgreSQL</li>
+					<li>Edge</li>
 					<ul>
-						<li>Utilisation de la bibliothèque PostgreSQL Libpq</li>
-						<li>Création d’une fonction d’insertion des métriques dans PostgreSQL</li>
+						<li>Import du certificat racine dans les autorités de certification de confiance sur Windows 11</li>
 					</ul>
 					</li>
 				</ul>
 
 				<b>Outils</b>
 				<ul>
-					<li>Langage C pour la collecte des métriques.</li>
-					<li>PostgreSQL pour le stockage des données.</li>
-					<li>Systèmes d'exploitation : Almalinux pour l'application en C et Rocky pour la base de donées
-						PostgreSQL</li>
+					<li>PostgreSQL pour la création de la table users</li>
+					<li>Système d'exploitation : Debian pour le serveur Flask en python</li>
+					<li>Edge pour l'importation du certificat racine sur Windows 11</li>
 				</ul>
 
 				<b>Code source</b>
