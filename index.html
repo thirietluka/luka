@@ -521,21 +521,21 @@
 				<b>Objectifs</b>
 				<ul>
 					<li>Exposer les données via une API REST Flask sous http://192.168.0.4:5000/data</li>
-						<ul>
-							<li>Import de Flask, jsonify et psicopg2</li>
-							<li>Création d'une fonction pour obtenir la connexion à PostgreSQL (get_connection)</li>
-							<li>Création d'une route /data</li>
-						</ul>
-					
-						<li>Fonction get_data</li>
-							<ul>
-								<li>Ouvre une connexion à la base PostgreSQL (get_db_connection)</li>
-								<li>Exécute une requête SQL pour récupérer les données (CPU, RAM, DISK, created_at)</li>
-								<li>récupère tous les résultats dans une liste de tuples</li>
-								<li>Transforme les tuples en dictionnaires pour avoir des clés lisibles</li>
-								<li>Convertit le tout en JSON</li>
-							</ul>
-			    </ul>
+					<ul>
+						<li>Import de Flask, jsonify et psicopg2</li>
+						<li>Création d'une fonction pour obtenir la connexion à PostgreSQL (get_connection)</li>
+						<li>Création d'une route /data</li>
+					</ul>
+
+					<li>Fonction get_data</li>
+					<ul>
+						<li>Ouvre une connexion à la base PostgreSQL (get_db_connection)</li>
+						<li>Exécute une requête SQL pour récupérer les données (CPU, RAM, DISK, created_at)</li>
+						<li>récupère tous les résultats dans une liste de tuples</li>
+						<li>Transforme les tuples en dictionnaires pour avoir des clés lisibles</li>
+						<li>Convertit le tout en JSON</li>
+					</ul>
+				</ul>
 
 				<b>Outils</b>
 				<ul>
@@ -543,7 +543,8 @@
 					<li>Psycopg2 pour que PostgreSQL soit accessible depuis Python</li>
 					<li>Flask pour le serveur web en python</li>
 					<li>jsonify pour la conversion des tuples en JSON</li>
-					<li>Système d’exploitation : Debian pour l'application en Python et Rocky pour la base de données PostgreSQL</li>
+					<li>Système d’exploitation : Debian pour l'application en Python et Rocky pour la base de données
+						PostgreSQL</li>
 				</ul>
 
 				<h2>Semaine 3</h2>
@@ -559,14 +560,17 @@
 						<ul>
 							<li>Utilise fetch("/data") pour récupérer les données JSON du serveur Flask</li>
 							<li>Convertit la réponse en objet JavaScript</li>
-							<li>Inverse les données pour les mettre dans le bon ordre (du plus ancien au plus récent)</li>
+							<li>Inverse les données pour les mettre dans le bon ordre (du plus ancien au plus récent)
+							</li>
 						</ul>
 						<li>Fonction map</li>
-							<ul>
-								<li>Récupère dans ces données les heures et les valeurs du CPU, de la RAM et du DISK</li>
-								<li>Met à jour les graphiques avec <NotreGraphique>.data et redessine avec <NotreGraphique>.update </li>
-								<li>Relance la fonction toutes les 2 secondes avec setInterval(refreshData, 2000) pour actualiser les graphiques</li>	
-							</ul>
+						<ul>
+							<li>Récupère dans ces données les heures et les valeurs du CPU, de la RAM et du DISK</li>
+							<li>Met à jour les graphiques avec <NotreGraphique>.data et redessine avec <NotreGraphique>
+										.update </li>
+							<li>Relance la fonction toutes les 2 secondes avec setInterval(refreshData, 2000) pour
+								actualiser les graphiques</li>
+						</ul>
 						</li>
 					</ul>
 					<li>Fichier styles.css</li>
@@ -642,6 +646,16 @@
 					<li>Systèmes d'exploitation : Almalinux pour l'application en C et Rocky pour la base de donées
 						PostgreSQL</li>
 				</ul>
+
+				<h2>
+					<a href="https://github.com/thirietluka/meteoperso/blob/main/app.py" target="_blank"
+						style="display:flex;align-items:center;gap:6px;">
+						<img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="22" alt="GitHub icon">
+						Voir le code app.py
+					</a>
+
+				</h2>
+
 			</div>
 
 
