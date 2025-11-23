@@ -465,14 +465,12 @@
 				<h1 id="stage">Mon stage</h1>
 				<p>Stage Sentinel ArchiConsulting (1 mois)</p>
 				<p class="drop-cap">
-					Le projet que je dois réaliser s’appelle « Météo perso ». Il consiste à créer une application qui
-					surveille les
-					ressources de
-					l’ordinateur (processeur, mémoire, disque), stocke les résultats dans une base de données
-					PostgreSQL, puis
-					affiche ces informations sur une page web dynamique hébergée par un serveur web. L’application web
-					utilise
-					une API REST sécurisée en TLS et présente les résultats sous forme de graphiques.
+					Le projet que j’ai développé s’appelle « Météo Perso ». C’est une application qui surveille les
+					ressources de l’ordinateur (processeur, mémoire, disque), enregistre les données dans une base
+					PostgreSQL, puis les affiche sur une page web dynamique hébergée par un serveur web (python/Flask).
+					Les informations sont présentées sous forme de graphiques.
+					Enfin, l’accès à l’interface web est sécurisé grâce à un système d’authentification et au
+					chiffrement TLS.
 				</p>
 
 				<h2>Semaine 1 (Langage C, SQL)</h2>
@@ -546,7 +544,7 @@
 					<ul>
 						<li>Ouverture d'une connexion à la base PostgreSQL (get_db_connection)</li>
 						<li>Exécution d'une requête SQL pour récupérer les données (CPU, RAM, DISK, created_at)</li>
-						<li>récupératon de tous les résultats dans une liste de tuples</li>
+						<li>Récupération de tous les résultats dans une liste de tuples</li>
 						<li>Transformation des tuples en dictionnaires pour avoir des clés lisibles</li>
 						<li>Convertion du tout en JSON</li>
 					</ul>
@@ -575,7 +573,7 @@
 						<img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="22" alt="GitHub icon">
 						Voir le code create_table.sql
 					</a>
-			
+
 				</p>
 
 				<h2>Semaine 3 (HTML, Javascript, CSS)</h2>
@@ -596,9 +594,9 @@
 						</ul>
 						<li>Fonction map</li>
 						<ul>
-							<li>Récupération dans les données des heures et des valeurs du CPU, de la RAM et du DISK</li>
-							<li>Mise à jour des graphiques avec <NotreGraphique>.data et redessine avec <NotreGraphique>
-										.update </li>
+							<li>Récupération dans les données des heures et des valeurs du CPU, de la RAM et du DISK
+							</li>
+							<li>Mise à jour des graphiques avec la méthode update() de la classe Chart</li>
 							<li>Relance de la fonction toutes les 2 secondes avec setInterval(refreshData, 2000) pour
 								actualiser les graphiques</li>
 						</ul>
@@ -642,7 +640,7 @@
 						<img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="22" alt="GitHub icon">
 						Voir le code charts.js
 					</a>
-					
+
 					<a href="https://github.com/thirietluka/meteoperso/blob/main/styles.css" target="_blank"
 						style="display:flex;align-items:center;gap:6px;">
 						<img src="https://img.icons8.com/ios-glyphs/30/000000/github.png" width="22" alt="GitHub icon">
@@ -662,7 +660,7 @@
 					</a>
 
 				</p>
-				
+
 
 				<h2>Semaine 4 (Identification, chiffrement, Certificats, TLS)</h2>
 				<b>Objectifs</b>
@@ -673,7 +671,7 @@
 						<ul>
 							<li>Création d'une table users dans PostgreSQL</li>
 							<ul>
-								<li>Insertion d'une colonne login et une password</li>
+								<li>Insertion d'une colonne login et d'une colonne password</li>
 								<li>Isertion du mot de passe(hash bcrypt) dans la colonne password</li>
 							</ul>
 						</ul>
@@ -682,29 +680,55 @@
 						<ul>
 							<li>Création d'une page /login avec un petit formulaire HTML(login.html)</li>
 							<ul>
-								<li>Vérification du couple login/mot de passe côté Flask avec bcrypt</li>
+								<li>Vérification du couple (login, mot de passe) côté Flask avec bcrypt</li>
 							</ul>
-							<li>Utilisation de la session Flask pour 'retenir' que l'utilisateur est connecté</li>
+							<li>Utilisation de la session Flask pour 'retenir' que l'utilisateur est connecté (Cookie de
+								session)</li>
 							<li>Redirection vers /graphics si l'authentification est réussi</li>
 							<li>Interdiction de l'accès à /graphics si la personne n'est pas connectée</li>
 							<li>Interdiction de l'accès à /data si la personne n'est pas connectée</li>
 						</ul>
-						
+
 						<li>Linux</li>
+						<li>Création d’un certificat racine (CA)</li>
+						<ul>
+							<li>Génération d’un certificat d’autorité qui servira à signer les certificats du serveur
+							</li>
+						</ul>
+
+						<li>Création de la clé privée du serveur Flask</li>
+						<ul>
+							<li>Génération du fichier server.key</li>
+						</ul>
+
+						<li>Création de la requête de signature (CSR) du serveur Flask</li>
+						<ul>
+							<li>Production du fichier server.csr, destiné à être signé par le CA</li>
+						</ul>
+
+						<li>Création du fichier v3.ext</li>
+						<ul>
+							<li>Ajout des informations nécessaires, dont le champ SAN (Subject Alternative Name)</li>
+						</ul>
+
+						<li>Signature du certificat serveur</li>
+						<ul>
+							<li>Génération du certificat final server.crt en utilisant :</li>
+
 							<ul>
-								<li>Création d'un certificat racine qui sert à signer d'autres certificats (CA)</li>
-								<li>Création d'une clé privée pour le serveur Flask</li>
-								<li>Création d'une requête de signature (CSR) pour le serveur Flask</li>
-								<li>Création d'un fichier v3.ext pour le SAN (Subject Alternate Name)</li>
-								<li>Signature du certificat serveur avec le certificat racine</li>
+								<li>la clé privée du serveur</li>
+								<li>le fichier server.csr</li>
+								<li>le certificat racine</li>
 							</ul>
+						</ul>
 
 						<li>Edge</li>
-					    	<ul>
-						   		<li>Import du certificat racine dans les autorités de certification de confiance sur Windows 11</li>
-					    	</ul>
+						<ul>
+							<li>Import du certificat racine dans les autorités de certification de confiance sur Windows
+								11</li>
+						</ul>
 					</ul>
-					
+
 				</ul>
 
 				<b>Outils</b>
