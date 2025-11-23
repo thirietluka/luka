@@ -475,10 +475,10 @@
 					une API REST sécurisée en TLS et présente les résultats sous forme de graphiques.
 				</p>
 
-				<h2>Semaine 1</h2>
+				<h2>Semaine 1 (Langage C, SQL)</h2>
 				<b>Objectifs</b>
 				<ul>
-					<li>Lire des informations système (CPU, RAM, disque) sous Linux</li>
+					<li>Lecture des informations système (CPU, RAM, disque) sous Linux</li>
 					<ul>
 						<li>Fonction set_ram</li>
 						<ul>
@@ -501,7 +501,7 @@
 						</li>
 					</ul>
 					</li>
-					<li>Stocker ces mesures dans une base PostgreSQL</li>
+					<li>Stockage des mesures dans une base PostgreSQL</li>
 					<ul>
 						<li>Utilisation de la bibliothèque PostgreSQL Libpq</li>
 						<li>Création d’une fonction d’insertion des métriques dans PostgreSQL</li>
@@ -532,10 +532,10 @@
 
 				</p>
 
-				<h2>Semaine 2</h2>
+				<h2>Semaine 2 (Python, Flask, API REST)</h2>
 				<b>Objectifs</b>
 				<ul>
-					<li>Exposer les données via une API REST Flask sous http://192.168.0.4:5000/data</li>
+					<li>Exposition des données via une API REST Flask sous http://192.168.0.4:5000/data</li>
 					<ul>
 						<li>Import de Flask, jsonify et psicopg2</li>
 						<li>Création d'une fonction pour obtenir la connexion à PostgreSQL (get_connection)</li>
@@ -544,11 +544,11 @@
 
 					<li>Fonction get_data</li>
 					<ul>
-						<li>Ouvre une connexion à la base PostgreSQL (get_db_connection)</li>
-						<li>Exécute une requête SQL pour récupérer les données (CPU, RAM, DISK, created_at)</li>
-						<li>récupère tous les résultats dans une liste de tuples</li>
-						<li>Transforme les tuples en dictionnaires pour avoir des clés lisibles</li>
-						<li>Convertit le tout en JSON</li>
+						<li>Ouverture d'une connexion à la base PostgreSQL (get_db_connection)</li>
+						<li>Exécution d'une requête SQL pour récupérer les données (CPU, RAM, DISK, created_at)</li>
+						<li>récupératon de tous les résultats dans une liste de tuples</li>
+						<li>Transformation des tuples en dictionnaires pour avoir des clés lisibles</li>
+						<li>Convertion du tout en JSON</li>
 					</ul>
 				</ul>
 
@@ -578,10 +578,10 @@
 			
 				</p>
 
-				<h2>Semaine 3</h2>
+				<h2>Semaine 3 (HTML, Javascript, CSS)</h2>
 				<b>Objectifs</b>
 				<ul>
-					<li>Afficher les résultats sur une page web avec Chart.js</li>
+					<li>Affichage des résultats sur une page web avec Chart.js</li>
 					<ul>
 						<li>Fichier charts.js</li>
 						<ul>
@@ -589,32 +589,32 @@
 						</ul>
 						<li>Fonction refreshData</li>
 						<ul>
-							<li>Utilise fetch("/data") pour récupérer les données JSON du serveur Flask</li>
-							<li>Convertit la réponse en objet JavaScript</li>
-							<li>Inverse les données pour les mettre dans le bon ordre (du plus ancien au plus récent)
+							<li>Utilisation de fetch("/data") pour récupérer les données JSON du serveur Flask</li>
+							<li>Convertion de la réponse en objet JavaScript</li>
+							<li>Inversion des données pour les mettre dans le bon ordre (du plus ancien au plus récent)
 							</li>
 						</ul>
 						<li>Fonction map</li>
 						<ul>
-							<li>Récupère dans ces données les heures et les valeurs du CPU, de la RAM et du DISK</li>
-							<li>Met à jour les graphiques avec <NotreGraphique>.data et redessine avec <NotreGraphique>
+							<li>Récupération dans les données des heures et des valeurs du CPU, de la RAM et du DISK</li>
+							<li>Mise à jour des graphiques avec <NotreGraphique>.data et redessine avec <NotreGraphique>
 										.update </li>
-							<li>Relance la fonction toutes les 2 secondes avec setInterval(refreshData, 2000) pour
+							<li>Relance de la fonction toutes les 2 secondes avec setInterval(refreshData, 2000) pour
 								actualiser les graphiques</li>
 						</ul>
 						</li>
 					</ul>
 					<li>Fichier styles.css</li>
 					<ul>
-						<li>Centre et empile verticalement chaque graphique dans des conteneurs .chart-box </li>
-						<li>Définit une taille fixe pour chaque graphique</li>
+						<li>Centrage et empilement vertical de chaque graphique dans des conteneurs 'DIV'</li>
+						<li>Définition d'une taille fixe pour chaque graphique</li>
 					</ul>
 					<li>Fichier index.html</li>
 					<ul>
-						<li>Importe Chart.js</li>
-						<li>Importe le fichier styles.css pour le style</li>
-						<li>Crée trois zones "canvas" pour dessiner les graphiques</li>
-						<li>Importe le fichier charts.js qui crée et met à jour les graphiques en temps réel</li>
+						<li>Import de la bibliothèque Javascript 'Chart.js'</li>
+						<li>Import du fichier styles.css pour les styles CSS</li>
+						<li>Création de trois zones "canvas" pour dessiner les graphiques</li>
+						<li>Import du fichier 'local' charts.js qui crée et met à jour les graphiques en temps réel</li>
 					</ul>
 					<li>Fichier app.py</li>
 					<ul>
@@ -664,10 +664,10 @@
 				</p>
 				
 
-				<h2>Semaine 4</h2>
+				<h2>Semaine 4 (Identification, chiffrement, Certificats, TLS)</h2>
 				<b>Objectifs</b>
 				<ul>
-					<li>Lire des informations système (CPU, RAM, disque) sous Linux.</li>
+					<li>Sécurisation de l'accès</li>
 					<ul>
 						<li>PostgreSQL</li>
 						<ul>
@@ -711,7 +711,7 @@
 				<ul>
 					<li>PostgreSQL pour la création de la table users</li>
 					<li>Système d'exploitation : Debian pour le serveur Flask en python</li>
-					<li>Edge pour l'importation du certificat racine sur Windows 11</li>
+					<li>Edge pour l'import du certificat racine sur Windows 11</li>
 				</ul>
 
 				<b>Code source</b>
